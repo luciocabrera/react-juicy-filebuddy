@@ -1,0 +1,15 @@
+{
+  "en": {
+    "application": {
+      "title": "Filebuddy",
+      "language": "English"
+    },
+    "services": "Services",
+    "tables": "Tables",
+    "tabs": {
+      "columnsTitle": "Columns",
+      "dataTitle": "Data",
+      "formTitle": "Form"
+    }
+  }
+}
