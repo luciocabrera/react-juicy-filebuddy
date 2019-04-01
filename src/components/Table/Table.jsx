@@ -1,41 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-// Import React Table
+import React from 'react';
+import './../../App.css';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-
-class Table extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: props.data,
-      columns: [
-        {
-          Header: 'First Name',
-          accessor: 'name',
-        },
-        {
-          Header: 'Last Name',
-          accessor: 'label',
-        }
-      ]
-    };
-  }
-
-  async componentDidMount() {}
-
-  render() {
-    return (
-      <div>
-        <ReactTable
-          data={this.state.data}
-          columns={this.state.columns}
-          defaultPageSize={10}
-          className="-striped -highlight"
-        />
-      </div>
-    );
-  }
-}
+const Table = ({ data, columns, defaultPageSize,className }) => (
+  <div>
+    <ReactTable
+      data={data}
+      columns={columns}
+      defaultPageSize={defaultPageSize}
+      className={className}
+    />
+  </div>
+);
 
 export default Table;

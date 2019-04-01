@@ -6,6 +6,8 @@
     },
     "services": "Services",
     "tables": "Tables",
+    "tableColumnName": "Name",
+    "tableColumnLabel": "Label",
     "tabs": {
       "columnsTitle": "Columns",
       "dataTitle": "Data",

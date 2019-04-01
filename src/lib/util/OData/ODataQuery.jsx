@@ -5,7 +5,13 @@ const headers = new Headers({ 'Content-Type': 'application/json' });
 async function resolveCall(response) {
   const text = await response.text();
   if (!text) return null;
-  const json = JSON.parse(text);
+  let json = {d:{results:[]}};
+  try {
+    json = JSON.parse(text);
+  } catch (err) {
+    window.alert('somethingt went wrong');
+    return json;
+  }
   return json.value ? json.value : json;
 }
 
@@ -13,7 +19,7 @@ async function call(method, url, content) {
   const isContent = content && Object.keys(content).length > 0;
   if (method === 'GET')
     return await fetch(
-       `${url}${isContent ? '?' + queryString.stringify(content) : ''}`,
+      `${url}${isContent ? '?' + queryString.stringify(content) : ''}`,
       { method, headers }
     ).then(resolveCall);
   else
